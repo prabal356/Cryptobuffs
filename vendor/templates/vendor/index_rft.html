@@ -34,16 +34,15 @@
 	</div>
 	<div id="menu">
 		<div class="title">
-			<p>This is <strong>Buyer-Vendor Platform</strong>, below are vendor details please click to get the expanded view.</p>
+			<p>Service Partner Capability Cards with necessary details are showcased below.</p>
 		</div>
 		<ul>
 			{% for vend_1 in all_rfts %}
 				<div class="boxA">
 						<div class="box margin-btm">
-							<img src="https://www.livemint.com/rf/Image-621x414/LiveMint/Period2/2017/05/03/Photos/Processed/wiproo-khSC--621x414@LiveMint.jpg" width="320" height="180" alt="" />
+								<img src="http://www.carlogos.org/logo/Ford-logo-1929-1440x900.png" width="320" height="180" alt="" />
 							<div class="details">
 								<p>Vendor_name : {{vend_1.vendor_name}} <br/>location : {{vend_1.location}} <br/> name_executive : {{vend_1.name_executive}} <br/> email_id : {{vend_1.email_id}} <br/> service_line : {{vend_1.service_line}} <br/> capability_area : {{ vend_1.capability_area }}</p>
-								
 							</div>
 							<a href="/vendor/rft{{ vend_1.id }}/" class="button">More Details</a>
 						</div>
