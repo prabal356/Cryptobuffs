@@ -1,0 +1,65 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+
+	{% load static %}
+	<link rel="stylesheet" type = "text/css" href="{% static 'default.css' %}" />
+
+{% csrf_token %}
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title> </title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+
+<div id="header" class="container">
+	<div id="logo">
+		<h1>Service Provider Platform</h1>
+	</div>
+	<div id="menu">
+		<ul>
+			<li class="active"><a href="{% url 'vendor_homepage' %}" accesskey="1" title="">Switch to Buyers</a></li>
+
+		</ul>
+	</div>
+</div>
+<div id="page">
+	<div class="container">
+		<div class="title">
+			<p>This is <strong>Buyer-Vendor Platform</strong>, below are buyers details please click to get the expanded view.</p>
+		</div>
+		<ul>
+			{% for vend_1 in all_vendors %}
+				<div class="boxA">
+						<div class="box margin-btm">
+							<img src="https://www.livemint.com/rf/Image-621x414/LiveMint/Period2/2017/05/03/Photos/Processed/wiproo-khSC--621x414@LiveMint.jpg" width="320" height="180" alt="" />
+							<div class="details">
+								<p>vertical : {{vend_1.vertical}} <br/>company : {{vend_1.company}} <br/> location : {{vend_1.location}} <br/>name_executive : {{vend_1.name_executive}} <br/> project_name : {{vend_1.project_name}} <br/> executive_designation : {{vend_1.executive_designation}} <br/> deal_portfolio : {{ vend_1.deal_portfolio }}</p>
+
+							</div>
+							<a href="/vendor/{{ vend_1.id }}/" class="button">More Details</a>
+						</div>
+					</div>
+			{% endfor %}
+		</ul>
+
+	</div>
+</div>
+<a href = "{% url 'RFP' %}">Create RFP</a><br/>
+<a href = "{% url 'login' %}">Logout</a>
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">login</a>
+{% endif %}
+
+{% endblock %}

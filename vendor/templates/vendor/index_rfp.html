@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Name       : TailPiece 
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20130902
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	{% load static %}
+	<link rel="stylesheet" type = "text/css" href="{% static 'default.css' %}" />
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title> </title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+
+<body>
+<div id="header" class="container">
+	<div id="logo">
+		<h1>Service Provider Platform</h1>
+	</div>
+	<div id="menu">
+		<ul>
+			<li class="active"><a href="{% url 'index' %}" accesskey="1" title="">Switch to Buyers</a></li>
+
+		</ul>
+	</div>
+</div>
+
+
+<div id="page">
+	<div class="container">
+		<div class="title">
+			<p>This is <strong>Buyer-Vendor Platform</strong>, below are vendor details please click to get the expanded view. To check our Vendors information please click on vendors above</p>
+		</div>
+		<ul>
+			{% for vend_1 in all_vendors %}
+				<div class="boxA">
+						<div class="box margin-btm">
+							<img src="https://www.livemint.com/rf/Image-621x414/LiveMint/Period2/2017/05/03/Photos/Processed/wiproo-khSC--621x414@LiveMint.jpg" width="320" height="180" alt="" />
+							<div class="details">
+								<p>vertical : {{vend_1.vertical}} <br/>company : {{vend_1.company}} <br/> location : {{vend_1.location}} <br/>name_executive : {{vend_1.name_executive}} <br/> project_name : {{vend_1.project_name}} <br/> executive_designation : {{vend_1.executive_designation}} <br/> deal_portfolio : {{ vend_1.deal_portfolio }}</p>
+
+							</div>
+							<a href="/vendor/{{ vend_1.id }}/" class="button">More Details</a>
+						</div>
+					</div>
+			{% endfor %}
+		</ul>
+		
+	</div>
+</div>
+
+</body>
+</head>
+</html>

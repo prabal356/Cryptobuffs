@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RFP</title>
+</head>
+<body>
+{% csrf_token %}
+<form action="/vendor/home/" method="post">
+    {% csrf_token %}
+    <label for="vertical">vertical: </label>
+    <input id="vertical" type="text" name="vertical" value="{{ current_vertical }}">
+    <br/>
+    <label for="company">company: </label>
+    <input id="company" type="text" name="company" value="{{ current_company }}">
+    <br/>
+    <label for="location">location: </label>
+    <input id="location" type="text" name="location" value="{{ current_location }}">
+    <br/>
+    <label for="name_executive">name_executive: </label>
+    <input id="name_executive" type="text" name="name_executive" value="{{ current_name_executive }}">
+    <br/>
+
+    <label for="phone">phone: </label>
+    <input id="phone" type="Number" name="phone" value="{{ current_phone }}">
+    <br/>
+    <label for="project_name">project_name: </label>
+    <input id="project_name" type="text" name="project_name" value="{{ current_project_name }}">
+    <br/>
+
+    <label for="executive_designation">executive_designation: </label>
+    <input id="executive_designation" type="text" name="executive_designation" value="{{ current_executive_designation }}">
+    <br/>
+
+    <label for="deal_portfolio">deal_portfolio: </label>
+    <input id="deal_portfolio" type="text" name="deal_portfolio" value="{{ current_deal_portfolio }}">
+    <br/>
+    <label for="business_unit">business_unit: </label>
+    <input id="business_unit" type="text" name="business_unit" value="{{ current_business_unit }}">
+    <br/>
+    <label for="budget_allocated">budget_allocated: </label>
+    <input id="budget_allocated" type="text" name="budget_allocated" value="{{ current_budget_allocated }}">
+    <br/>
+
+    <label for="preferred_service_partners">preferred_service_partners: </label>
+    <input id="preferred_service_partners" type="text" name="preferred_service_partners" value="{{ current_preferred_service_partners }}">
+    <br/>
+    <label for="introduction">introduction: </label>
+    <input id="introduction" type="text" name="introduction" value="{{ current_introduction }}">
+    <br/>
+
+    <label for="project_goals">project_goals: </label>
+    <input id="project_goals" type="text" name="project_goals" value="{{ current_project_goals }}">
+    <br/>
+    <label for="selection_schedule">selection_schedule: </label>
+    <input id="selection_schedule" type="text" name="selection_schedule" value="{{ current_selection_schedule }}">
+    <br/>
+    <label for="timeline_of_project">timeline_of_project: </label>
+    <input id="timeline_of_project" type="text" name="timeline_of_project" value="{{ current_timeline_of_project }}">
+    <br/>
+    <label for="elements_of_proposal">elements_of_proposal: </label>
+    <input id="elements_of_proposal" type="text" name="elements_of_proposal" value="{{ current_elements_of_proposal }}">
+    <br/>
+    <label for="evaluation_criteria">evaluation_criteria: </label>
+    <input id="evaluation_criteria" type="text" name="evaluation_criteria" value="{{ current_evaluation_criteria }}">
+    <br/>
+    <label for="possible_roadblocks">possible_roadblocks: </label>
+    <input id="possible_roadblocks" type="text" name="possible_roadblocks" value="{{ current_possible_roadblocks }}">
+    <br/>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
+
+<!cleaned_data = super(RFPForm, self).clean()
+        vertical = cleaned_data.get('vertical')
+        company = cleaned_data.get('company')
+        location = cleaned_data.get('location')
+        name_executive = cleaned_data.get('name_executive')
+        phone = cleaned_data.get('phone')
+        project_name = cleaned_data.get('project_name')
+        executive_designation = cleaned_data.get('executive_designation')
+        deal_portfolio = cleaned_data.get('deal_portfolio')
+        business_unit = cleaned_data.get('business_unit')
+        budget_allocated = cleaned_data.get('budget_allocated')
+        preferred_service_partners = cleaned_data.get('preferred_service_partners')
+        introduction = cleaned_data.get('introduction')
+        project_goals = cleaned_data.get('project_goals')
+        selection_schedule = cleaned_data.get('selection_schedule')
+        timeline_of_project = cleaned_data.get('timeline_of_project')
+        elements_of_proposal = cleaned_data.get('elements_of_proposal')
+        evaluation_criteria = cleaned_data.get('evaluation_criteria')
+        possible_roadblocks = cleaned_data.get('possible_roadblocks')>

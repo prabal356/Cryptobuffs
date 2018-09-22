@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+  <h2>Login</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+
+  </form>
+
+
+{% endblock %}
+<h1 href="/vendor/signup/" class="button">Signup</h1>
+</body>
+</html>
